@@ -2,6 +2,7 @@
 @section('content')
     <div class="container">
         <h4>Data Buku</h4>
+        <a href="{{ route('buku.create')}}" class="btn btn-info text-white my-3">Tambah Buku</a>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -15,10 +16,10 @@
             <tbody>
                 @foreach ($data_buku as $buku)
                     <tr>
-                        <td>{{$buku->id}}</td>
+                        <td>{{++$no}}</td>
                         <td>{{$buku->judul}}</td>
                         <td>{{$buku->penulis}}</td>
-                        <td>@currency($buku->harga)</td>
+                        <td>{{$buku->harga}}</td>
                         <td>{{$buku->tgl_terbit->format('l, d F Y')}}</td>
                     </tr>
                 @endforeach
