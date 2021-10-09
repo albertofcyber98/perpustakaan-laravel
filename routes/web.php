@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'BukuController@index');
-Route::get('/buku', 'BukuController@index');
 Route::get('/buku/create', 'BukuController@create')->name('buku.create');
 Route::get('/buku', 'BukuController@store')->name('buku.store');
+Route::post('/buku/delete/{id}', 'BukuController@destroy')->name('buku.destroy');

@@ -11,6 +11,7 @@
                     <th>Penulis</th>
                     <th>Harga</th>
                     <th>Tanggal Terbit</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,10 @@
                         <td>{{$buku->penulis}}</td>
                         <td>{{$buku->harga}}</td>
                         <td>{{$buku->tgl_terbit->format('l, d F Y')}}</td>
+                        <td> <form action="{{route('buku.destroy', $buku->id)}}" method="POST">
+                            @csrf
+                            <button onclick="return confirm('Yaki ingin menghapus data ?')" class="btn btn-sm btn-danger">Hapus</button>
+                        </form> </td>
                     </tr>
                 @endforeach
             </tbody>
