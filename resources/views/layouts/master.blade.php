@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Perpustakaan</title>
     <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
+    <script src="{{url('js/jquery.js')}}"></script>
 </head>
 <body>
     @include('layouts.header')
     @yield('content')
-    <script src="{{url('js/bootstrap.min.js')}}"></script>
+        <script src="{{url('js/bootstrap.min.js')}}"></script>
 </body>
 </html>

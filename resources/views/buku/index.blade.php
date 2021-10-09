@@ -23,9 +23,12 @@
                         <td>{{$buku->harga}}</td>
                         <td>{{$buku->tgl_terbit->format('l, d F Y')}}</td>
                         <td> <form action="{{route('buku.destroy', $buku->id)}}" method="POST">
-                            @csrf
-                            <button onclick="return confirm('Yaki ingin menghapus data ?')" class="btn btn-sm btn-danger">Hapus</button>
-                        </form> </td>
+                                @csrf
+                                <a href="{{route('buku.edit', $buku->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                                <button onclick="return confirm('Yaki ingin menghapus data ?')" class="btn btn-sm btn-danger">Hapus</button>
+                            </form>
+                        </td>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
