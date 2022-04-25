@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('content')
+@if(count($data_buku))
 <div class="container">
+    <div class="alert alert-info">Ditemukan {{ count($data_buku) }} data dengan kata `<b>{{$cari}}</b>`</div>
     @if(Session::has('pesan'))
     <div class="alert alert-success">{{ Session::get('pesan')}}</div>
     @endif
@@ -41,13 +43,16 @@
             @endforeach
         </tbody>
     </table>
-    <div class="row justify-content-between mt-5">
-        <div class="col-4">
-            <div>Jumlah Buku : {{$jumlah_buku}}</div>
-        </div>
+    <div class="row justify-content-end mt-5">
         <div class="col-3">
             <div>{{$data_buku->links()}}</div>
         </div>
     </div>
+    @else
+    <div class="mx-3">
+        <h4>Data {{$cari}} tidak ditemukan</h4>
+        <a href="/" class="btn btn-secondary">Kembali</a>
+    </div>
+    @endif
 </div>
 @endsection

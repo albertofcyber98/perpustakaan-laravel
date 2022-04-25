@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <h4>Tambah Buku</h4>
-        <form method="GET" action="{{route('buku.update', $buku->id)}}">
+        <form method="POST" action="{{route('buku.update', $buku->id)}}">
             @csrf
             <div class="row">
                 <div class="col-2">
@@ -33,7 +33,7 @@
                     <label for="terbit" class="col-form-label">Tgl. Terbit</label>
                 </div>
                 <div class="col-9">
-                    <input type="date" name="tgl_terbit" id="terbit" class="form-control" value="{{$buku->tgl_terbit}}">
+                    <input type="text" name="tgl_terbit" id="terbit" class="form-control" value="{{$buku->tgl_terbit->format('Y-m-d')}}">
                 </div>
             </div>
             <div class="row mt-3">
